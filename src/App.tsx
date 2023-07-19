@@ -4,15 +4,29 @@ function App() {
   const [a, setA] = useState("");
   const [b, setB] = useState("");
   const [operator, setOperator] = useState("");
+  const [isOpe, setisOpe] = useState(false);
 
   const handleButtonClick = (num: string) => {
-    if (a.length === 0 && num == "0") {
-      return;
+    if (isOpe) {
+      if (b.length === 0 && num == "0") {
+        return;
+      }
+      setB(num);
+    } else if (!isOpe) {
+      if (a.length === 0 && num == "0") {
+        return;
+      }
+      setA(num);
     }
-    setA(num);
   };
 
-  const handleOpeButtonClick = () => {};
+  const handleOpeButtonClick = (ope: string) => {
+    if (a.length === 0) {
+      return;
+    }
+    setOperator(ope);
+    setisOpe(true);
+  };
 
   return (
     <div className="App">
@@ -99,24 +113,26 @@ function App() {
         </button>
       </div>
       <div>
-        <button type="button" onClick={() => handleOpeButtonClick()}>
+        <button type="button" onClick={() => handleOpeButtonClick("+")}>
           +
         </button>
-        <button type="button" onClick={() => handleOpeButtonClick()}>
+        <button type="button" onClick={() => handleOpeButtonClick("-")}>
           -
         </button>
-        <button type="button" onClick={() => handleOpeButtonClick()}>
+        <button type="button" onClick={() => handleOpeButtonClick("*")}>
           *
         </button>
-        <button type="button" onClick={() => handleOpeButtonClick()}>
+        <button type="button" onClick={() => handleOpeButtonClick("/")}>
           /
         </button>
-        <button type="button" onClick={() => handleOpeButtonClick()}>
+        <button type="button" onClick={() => handleOpeButtonClick("%")}>
           %
         </button>
       </div>
       <div>
         <p>{a}</p>
+        <p>{operator}</p>
+        <p>{b}</p>
       </div>
     </div>
   );
