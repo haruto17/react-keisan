@@ -5,6 +5,7 @@ function App() {
   const [b, setB] = useState("");
   const [operator, setOperator] = useState("");
   const [isOpe, setisOpe] = useState(false);
+  const [ans, setAns] = useState(0);
 
   const handleButtonClick = (num: string) => {
     if (isOpe) {
@@ -26,6 +27,22 @@ function App() {
     }
     setOperator(ope);
     setisOpe(true);
+  };
+
+  const handleEqualButtonClick = () => {
+    let a_num = Number(a);
+    let b_num = Number(b);
+    if (operator == "+") {
+      setAns(a_num + b_num);
+    } else if (operator == "-") {
+      setAns(a_num - b_num);
+    } else if (operator == "*") {
+      setAns(a_num * b_num);
+    } else if (operator == "/") {
+      setAns(a_num / b_num);
+    } else if (operator == "%") {
+      setAns(a_num % b_num);
+    }
   };
 
   return (
@@ -128,12 +145,15 @@ function App() {
         <button type="button" onClick={() => handleOpeButtonClick("%")}>
           %
         </button>
-        <button type="button">=</button>
+        <button type="button" onClick={() => handleEqualButtonClick()}>
+          =
+        </button>
       </div>
       <div>
-        <p>{a}</p>
-        <p>{operator}</p>
-        <p>{b}</p>
+        <p>a : {a}</p>
+        <p>ope : {operator}</p>
+        <p>b : {b}</p>
+        <p>ans : {ans}</p>
       </div>
     </div>
   );
