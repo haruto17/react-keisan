@@ -9,13 +9,13 @@ function App() {
 
   const handleButtonClick = (num: string) => {
     if (isOpe) {
-      if (b.length === 0 && num == "0") {
+      if (b.length === 0 && num === "0") {
         return;
       }
       let new_b = b + num;
       setB(new_b);
     } else if (!isOpe) {
-      if (a.length === 0 && num == "0") {
+      if (a.length === 0 && num === "0") {
         return;
       }
       let new_a = a + num;
@@ -34,15 +34,15 @@ function App() {
   const handleEqualButtonClick = () => {
     let a_num = Number(a);
     let b_num = Number(b);
-    if (operator == "+") {
+    if (operator === "+") {
       setAns(a_num + b_num);
-    } else if (operator == "-") {
+    } else if (operator === "-") {
       setAns(a_num - b_num);
-    } else if (operator == "*") {
+    } else if (operator === "*") {
       setAns(a_num * b_num);
-    } else if (operator == "/") {
+    } else if (operator === "/") {
       setAns(a_num / b_num);
-    } else if (operator == "%") {
+    } else if (operator === "%") {
       setAns(a_num % b_num);
     }
   };
