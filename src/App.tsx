@@ -31,6 +31,22 @@ function App() {
     setisOpe(true);
   };
 
+  const handleCommaClick = () => {
+    if (isOpe) {
+      if (b.length === 0) {
+        return;
+      }
+      let new_b = b + ".";
+      setB(new_b);
+    } else if (!isOpe) {
+      if (a.length === 0) {
+        return;
+      }
+      let new_a = a + ".";
+      setA(new_a);
+    }
+  };
+
   const handleEqualButtonClick = () => {
     let a_num = Number(a);
     let b_num = Number(b);
@@ -137,6 +153,9 @@ function App() {
           }}
         >
           9
+        </button>
+        <button type="button" onClick={() => handleCommaClick()}>
+          .
         </button>
       </div>
       <div>
