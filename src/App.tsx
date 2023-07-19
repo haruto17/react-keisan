@@ -45,6 +45,14 @@ function App() {
     }
   };
 
+  const handleClearButtonClick = () => {
+    setA("");
+    setB("");
+    setOperator("");
+    setisOpe(false);
+    setAns(0);
+  };
+
   return (
     <div className="App">
       <div>
@@ -147,6 +155,11 @@ function App() {
         </button>
         <button type="button" onClick={() => handleEqualButtonClick()}>
           =
+        </button>
+      </div>
+      <div>
+        <button type="button" onClick={() => handleClearButtonClick()}>
+          clear
         </button>
       </div>
       <div>
