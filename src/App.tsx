@@ -12,12 +12,14 @@ function App() {
       if (b.length === 0 && num == "0") {
         return;
       }
-      setB(num);
+      let new_b = b + num;
+      setB(new_b);
     } else if (!isOpe) {
       if (a.length === 0 && num == "0") {
         return;
       }
-      setA(num);
+      let new_a = a + num;
+      setA(new_a);
     }
   };
 
