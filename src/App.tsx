@@ -128,6 +128,7 @@ function App() {
         <button type="button" onClick={() => handleOpeButtonClick("%")}>
           %
         </button>
+        <button type="button">=</button>
       </div>
       <div>
         <p>{a}</p>
