@@ -12,6 +12,8 @@ function App() {
     setA(num);
   };
 
+  const handleOpeButtonClick = () => {};
+
   return (
     <div className="App">
       <div>
@@ -94,6 +96,23 @@ function App() {
           }}
         >
           9
+        </button>
+      </div>
+      <div>
+        <button type="button" onClick={() => handleOpeButtonClick()}>
+          +
+        </button>
+        <button type="button" onClick={() => handleOpeButtonClick()}>
+          -
+        </button>
+        <button type="button" onClick={() => handleOpeButtonClick()}>
+          *
+        </button>
+        <button type="button" onClick={() => handleOpeButtonClick()}>
+          /
+        </button>
+        <button type="button" onClick={() => handleOpeButtonClick()}>
+          %
         </button>
       </div>
       <div>
