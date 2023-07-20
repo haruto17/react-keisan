@@ -83,6 +83,13 @@ function App() {
     setResults([...results, { a: a, ope: operator, b: b, ans: ans }]);
   };
 
+  const handleSetMem = (index: number) => {
+    setA(results[index].a);
+    setB(results[index].b);
+    setOperator(results[index].ope);
+    setAns(results[index].ans);
+  };
+
   return (
     <div className="App">
       <div>
@@ -207,7 +214,7 @@ function App() {
       <div>
         <ul>
           {results.map((result, index) => (
-            <li key={index}>
+            <li key={index} onClick={() => handleSetMem(index)}>
               {result.a} {result.ope} {result.b} = {result.ans}
             </li>
           ))}
