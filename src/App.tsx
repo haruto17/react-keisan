@@ -1,11 +1,19 @@
 import React, { useState } from "react";
 
+type CalcResult = {
+  a: number;
+  ope: string;
+  b: number;
+  ans: number;
+};
+
 function App() {
   const [a, setA] = useState("");
   const [b, setB] = useState("");
   const [operator, setOperator] = useState("");
   const [isOpe, setisOpe] = useState(false);
   const [ans, setAns] = useState(0);
+  const [results, setResults] = useState<CalcResult[]>([]);
 
   const handleButtonClick = (num: string) => {
     if (isOpe) {
@@ -195,6 +203,15 @@ function App() {
         <p>ope : {operator}</p>
         <p>b : {b}</p>
         <p>ans : {ans}</p>
+      </div>
+      <div>
+        <ul>
+          {results.map((result, index) => (
+            <li key={index}>
+              {result.a} {result.ope} {result.b} = {result.ans}
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
