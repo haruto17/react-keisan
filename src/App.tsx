@@ -1,11 +1,19 @@
 import React, { useState } from "react";
 
+type CalcResult = {
+  a: string;
+  ope: string;
+  b: string;
+  ans: number;
+};
+
 function App() {
   const [a, setA] = useState("");
   const [b, setB] = useState("");
   const [operator, setOperator] = useState("");
   const [isOpe, setisOpe] = useState(false);
   const [ans, setAns] = useState(0);
+  const [results, setResults] = useState<CalcResult[]>([]);
 
   const handleButtonClick = (num: string) => {
     if (isOpe) {
@@ -69,6 +77,10 @@ function App() {
     setOperator("");
     setisOpe(false);
     setAns(0);
+  };
+
+  const handleMemButtonClick = () => {
+    setResults([...results, { a: a, ope: operator, b: b, ans: ans }]);
   };
 
   return (
@@ -182,12 +194,24 @@ function App() {
         <button type="button" onClick={() => handleClearButtonClick()}>
           clear
         </button>
+        <button type="button" onClick={() => handleMemButtonClick()}>
+          M+
+        </button>
       </div>
       <div>
         <p>a : {a}</p>
         <p>ope : {operator}</p>
         <p>b : {b}</p>
         <p>ans : {ans}</p>
+      </div>
+      <div>
+        <ul>
+          {results.map((result, index) => (
+            <li key={index}>
+              {result.a} {result.ope} {result.b} = {result.ans}
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
