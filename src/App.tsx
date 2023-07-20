@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
 type CalcResult = {
-  a: number;
+  a: string;
   ope: string;
-  b: number;
+  b: string;
   ans: number;
 };
 
@@ -80,7 +80,7 @@ function App() {
   };
 
   const handleMemButtonClick = () => {
-    console.log("aaaa");
+    setResults([...results, { a: a, ope: operator, b: b, ans: ans }]);
   };
 
   return (
