@@ -71,6 +71,10 @@ function App() {
     setAns(0);
   };
 
+  const handleMemButtonClick = () => {
+    console.log("aaaa");
+  };
+
   return (
     <div className="App">
       <div>
@@ -181,6 +185,9 @@ function App() {
       <div>
         <button type="button" onClick={() => handleClearButtonClick()}>
           clear
+        </button>
+        <button type="button" onClick={() => handleMemButtonClick()}>
+          M+
         </button>
       </div>
       <div>
