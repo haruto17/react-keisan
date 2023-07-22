@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, KIND } from "baseui/button";
 import { ButtonGroup } from "baseui/button-group";
 import { FlexGrid, FlexGridItem } from "baseui/flex-grid";
+import { useStyletron } from "styletron-react";
 
 type CalcResult = {
   a: string;
@@ -107,10 +108,20 @@ function App() {
     setAns(results[index].ans);
   };
 
+  const [css] = useStyletron();
+
   return (
     <div className="App">
-      <FlexGrid flexGridColumnCount={2} flexGridRowGap="scale400">
-        <FlexGridItem>
+      <FlexGrid
+        flexGridColumnCount={2}
+        flexGridRowGap="scale400"
+        flexGridColumnGap="scale200"
+      >
+        <FlexGridItem
+          className={css({
+            maxWidth: "fit-content",
+          })}
+        >
           <ButtonGroup>
             <Button onClick={() => handleMemButtonClick()}>M+</Button>
             <Button>M-</Button>
@@ -120,7 +131,11 @@ function App() {
         <FlexGridItem>
           <Button onClick={() => handleClearButtonClick()}>C</Button>
         </FlexGridItem>
-        <FlexGridItem>
+        <FlexGridItem
+          className={css({
+            maxWidth: "fit-content",
+          })}
+        >
           <ButtonGroup>
             <Button onClick={() => handleButtonClick("7")}>7</Button>
             <Button onClick={() => handleButtonClick("8")}>8</Button>
@@ -130,7 +145,11 @@ function App() {
         <FlexGridItem>
           <Button onClick={() => handleOpeButtonClick("/")}>/</Button>
         </FlexGridItem>
-        <FlexGridItem>
+        <FlexGridItem
+          className={css({
+            maxWidth: "fit-content",
+          })}
+        >
           <ButtonGroup>
             <Button onClick={() => handleButtonClick("4")}>4</Button>
             <Button onClick={() => handleButtonClick("5")}>5</Button>
@@ -140,7 +159,11 @@ function App() {
         <FlexGridItem>
           <Button onClick={() => handleOpeButtonClick("*")}>*</Button>
         </FlexGridItem>
-        <FlexGridItem>
+        <FlexGridItem
+          className={css({
+            maxWidth: "fit-content",
+          })}
+        >
           <ButtonGroup>
             <Button onClick={() => handleButtonClick("1")}>1</Button>
             <Button onClick={() => handleButtonClick("2")}>2</Button>
@@ -150,7 +173,11 @@ function App() {
         <FlexGridItem>
           <Button onClick={() => handleOpeButtonClick("-")}>-</Button>
         </FlexGridItem>
-        <FlexGridItem>
+        <FlexGridItem
+          className={css({
+            maxWidth: "fit-content",
+          })}
+        >
           <ButtonGroup>
             <Button onClick={() => handleButtonClick("0")}>0</Button>
             <Button onClick={() => handleCommaClick()}>.</Button>
