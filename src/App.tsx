@@ -17,17 +17,31 @@ function App() {
 
   const handleButtonClick = (num: string) => {
     if (isOpe) {
-      if (b.length === 0 && num === "0") {
-        return;
+      if (b === "0") {
+        if (num === ".") {
+          let new_b = b + num;
+          setB(new_b);
+        } else {
+          let new_b = num;
+          setB(new_b);
+        }
+      } else {
+        let new_b = b + num;
+        setB(new_b);
       }
-      let new_b = b + num;
-      setB(new_b);
     } else if (!isOpe) {
-      if (a.length === 0 && num === "0") {
-        return;
+      if (a === "0") {
+        if (num === ".") {
+          let new_a = a + num;
+          setA(new_a);
+        } else {
+          let new_a = num;
+          setA(new_a);
+        }
+      } else {
+        let new_a = a + num;
+        setA(new_a);
       }
-      let new_a = a + num;
-      setA(new_a);
     }
   };
 
