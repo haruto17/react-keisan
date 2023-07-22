@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Button, KIND } from "baseui/button";
+import { ButtonGroup } from "baseui/button-group";
+import { FlexGrid, FlexGridItem } from "baseui/flex-grid";
 
 type CalcResult = {
   a: string;
@@ -107,90 +109,29 @@ function App() {
 
   return (
     <div className="App">
-      <div>
-        <Button
-          onClick={() => {
-            handleButtonClick("0");
-          }}
-        >
-          0
-        </Button>
-        {/* <button
-          type="button"
-          onClick={() => {
-            handleButtonClick("1");
-          }}
-        >
-          1
-        </button>
-        <button
-          type="button"
-          onClick={() => {
-            handleButtonClick("2");
-          }}
-        >
-          2
-        </button>
-        <button
-          type="button"
-          onClick={() => {
-            handleButtonClick("3");
-          }}
-        >
-          3
-        </button>
-        <button
-          type="button"
-          onClick={() => {
-            handleButtonClick("4");
-          }}
-        >
-          4
-        </button>
-        <button
-          type="button"
-          onClick={() => {
-            handleButtonClick("5");
-          }}
-        >
-          5
-        </button>
-        <button
-          type="button"
-          onClick={() => {
-            handleButtonClick("6");
-          }}
-        >
-          6
-        </button>
-        <button
-          type="button"
-          onClick={() => {
-            handleButtonClick("7");
-          }}
-        >
-          7
-        </button>
-        <button
-          type="button"
-          onClick={() => {
-            handleButtonClick("8");
-          }}
-        >
-          8
-        </button>
-        <button
-          type="button"
-          onClick={() => {
-            handleButtonClick("9");
-          }}
-        >
-          9
-        </button>
-        <button type="button" onClick={() => handleCommaClick()}>
-          .
-        </button> */}
-      </div>
+      <FlexGrid flexGridColumnCount={1} flexGridRowGap="scale400">
+        <FlexGridItem>
+          <ButtonGroup>
+            <Button onClick={() => handleButtonClick("7")}>7</Button>
+            <Button onClick={() => handleButtonClick("8")}>8</Button>
+            <Button onClick={() => handleButtonClick("9")}>9</Button>
+          </ButtonGroup>
+        </FlexGridItem>
+        <FlexGridItem>
+          <ButtonGroup>
+            <Button onClick={() => handleButtonClick("4")}>4</Button>
+            <Button onClick={() => handleButtonClick("5")}>5</Button>
+            <Button onClick={() => handleButtonClick("6")}>6</Button>
+          </ButtonGroup>
+        </FlexGridItem>
+        <FlexGridItem>
+          <ButtonGroup>
+            <Button onClick={() => handleButtonClick("1")}>1</Button>
+            <Button onClick={() => handleButtonClick("2")}>2</Button>
+            <Button onClick={() => handleButtonClick("3")}>3</Button>
+          </ButtonGroup>
+        </FlexGridItem>
+      </FlexGrid>
       <div>
         <button type="button" onClick={() => handleOpeButtonClick("+")}>
           +
