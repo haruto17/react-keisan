@@ -109,13 +109,26 @@ function App() {
 
   return (
     <div className="App">
-      <FlexGrid flexGridColumnCount={1} flexGridRowGap="scale400">
+      <FlexGrid flexGridColumnCount={2} flexGridRowGap="scale400">
+        <FlexGridItem>
+          <ButtonGroup>
+            <Button onClick={() => handleMemButtonClick()}>M+</Button>
+            <Button>M-</Button>
+            <Button onClick={() => handleOpeButtonClick("%")}>%</Button>
+          </ButtonGroup>
+        </FlexGridItem>
+        <FlexGridItem>
+          <Button onClick={() => handleClearButtonClick()}>C</Button>
+        </FlexGridItem>
         <FlexGridItem>
           <ButtonGroup>
             <Button onClick={() => handleButtonClick("7")}>7</Button>
             <Button onClick={() => handleButtonClick("8")}>8</Button>
             <Button onClick={() => handleButtonClick("9")}>9</Button>
           </ButtonGroup>
+        </FlexGridItem>
+        <FlexGridItem>
+          <Button onClick={() => handleOpeButtonClick("/")}>/</Button>
         </FlexGridItem>
         <FlexGridItem>
           <ButtonGroup>
@@ -125,41 +138,29 @@ function App() {
           </ButtonGroup>
         </FlexGridItem>
         <FlexGridItem>
+          <Button onClick={() => handleOpeButtonClick("*")}>*</Button>
+        </FlexGridItem>
+        <FlexGridItem>
           <ButtonGroup>
             <Button onClick={() => handleButtonClick("1")}>1</Button>
             <Button onClick={() => handleButtonClick("2")}>2</Button>
             <Button onClick={() => handleButtonClick("3")}>3</Button>
           </ButtonGroup>
         </FlexGridItem>
+        <FlexGridItem>
+          <Button onClick={() => handleOpeButtonClick("-")}>-</Button>
+        </FlexGridItem>
+        <FlexGridItem>
+          <ButtonGroup>
+            <Button onClick={() => handleButtonClick("0")}>0</Button>
+            <Button onClick={() => handleCommaClick()}>.</Button>
+            <Button onClick={() => handleEqualButtonClick()}>=</Button>
+          </ButtonGroup>
+        </FlexGridItem>
+        <FlexGridItem>
+          <Button onClick={() => handleOpeButtonClick("+")}>+</Button>
+        </FlexGridItem>
       </FlexGrid>
-      <div>
-        <button type="button" onClick={() => handleOpeButtonClick("+")}>
-          +
-        </button>
-        <button type="button" onClick={() => handleOpeButtonClick("-")}>
-          -
-        </button>
-        <button type="button" onClick={() => handleOpeButtonClick("*")}>
-          *
-        </button>
-        <button type="button" onClick={() => handleOpeButtonClick("/")}>
-          /
-        </button>
-        <button type="button" onClick={() => handleOpeButtonClick("%")}>
-          %
-        </button>
-        <button type="button" onClick={() => handleEqualButtonClick()}>
-          =
-        </button>
-      </div>
-      <div>
-        <button type="button" onClick={() => handleClearButtonClick()}>
-          clear
-        </button>
-        <button type="button" onClick={() => handleMemButtonClick()}>
-          M+
-        </button>
-      </div>
       <div>
         <p>a : {a}</p>
         <p>ope : {operator}</p>
