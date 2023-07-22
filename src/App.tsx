@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Button, KIND } from "baseui/button";
 
 type CalcResult = {
   a: string;
@@ -107,15 +108,14 @@ function App() {
   return (
     <div className="App">
       <div>
-        <button
-          type="button"
+        <Button
           onClick={() => {
             handleButtonClick("0");
           }}
         >
           0
-        </button>
-        <button
+        </Button>
+        {/* <button
           type="button"
           onClick={() => {
             handleButtonClick("1");
@@ -189,7 +189,7 @@ function App() {
         </button>
         <button type="button" onClick={() => handleCommaClick()}>
           .
-        </button>
+        </button> */}
       </div>
       <div>
         <button type="button" onClick={() => handleOpeButtonClick("+")}>
