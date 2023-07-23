@@ -3,6 +3,7 @@ import { Button } from "baseui/button";
 import { ButtonGroup } from "baseui/button-group";
 import { FlexGrid, FlexGridItem } from "baseui/flex-grid";
 import { ListItem, ListItemLabel } from "baseui/list";
+import { LabelLarge } from "baseui/typography";
 import { useStyletron } from "styletron-react";
 
 type CalcResult = {
@@ -137,10 +138,10 @@ function App() {
           textAlign: "right",
         })}
       >
-        <p>&emsp;{a}</p>
-        <p>&emsp;{operator}</p>
-        <p>&emsp;{b}</p>
-        <p>&emsp;{ans}</p>
+        <LabelLarge>&emsp;{a}</LabelLarge>
+        <LabelLarge>&emsp;{operator}</LabelLarge>
+        <LabelLarge>&emsp;{b}</LabelLarge>
+        <LabelLarge>&emsp;{ans}</LabelLarge>
       </div>
       <FlexGrid flexGridColumnCount={1} flexGridRowGap="scale400" flexGridColumnGap="scale200">
         <FlexGridItem>
