@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, KIND } from "baseui/button";
+import { Button } from "baseui/button";
 import { ButtonGroup } from "baseui/button-group";
 import { FlexGrid, FlexGridItem } from "baseui/flex-grid";
 import { useStyletron } from "styletron-react";
@@ -111,7 +111,7 @@ function App() {
   const [css] = useStyletron();
 
   return (
-    <div className="App">
+    <div>
       <FlexGrid
         flexGridColumnCount={1}
         flexGridRowGap="scale400"
@@ -119,42 +119,182 @@ function App() {
       >
         <FlexGridItem>
           <ButtonGroup>
-            <Button onClick={() => handleMemButtonClick()}>M+</Button>
-            <Button>M-</Button>
-            <Button onClick={() => handleOpeButtonClick("%")}>%</Button>
-            <Button onClick={() => handleClearButtonClick()}>C</Button>
+            <Button
+              onClick={() => handleMemButtonClick()}
+              className={css({
+                width: "3rem",
+              })}
+            >
+              M+
+            </Button>
+            <Button
+              className={css({
+                width: "3rem",
+              })}
+            >
+              M-
+            </Button>
+            <Button
+              onClick={() => handleOpeButtonClick("%")}
+              className={css({
+                width: "3rem",
+              })}
+            >
+              %
+            </Button>
+            <Button
+              onClick={() => handleClearButtonClick()}
+              className={css({
+                width: "3rem",
+              })}
+            >
+              C
+            </Button>
           </ButtonGroup>
         </FlexGridItem>
         <FlexGridItem>
           <ButtonGroup>
-            <Button onClick={() => handleButtonClick("7")}>7</Button>
-            <Button onClick={() => handleButtonClick("8")}>8</Button>
-            <Button onClick={() => handleButtonClick("9")}>9</Button>
-            <Button onClick={() => handleOpeButtonClick("/")}>/</Button>
+            <Button
+              onClick={() => handleButtonClick("7")}
+              className={css({
+                width: "3rem",
+              })}
+            >
+              7
+            </Button>
+            <Button
+              onClick={() => handleButtonClick("8")}
+              className={css({
+                width: "3rem",
+              })}
+            >
+              8
+            </Button>
+            <Button
+              onClick={() => handleButtonClick("9")}
+              className={css({
+                width: "3rem",
+              })}
+            >
+              9
+            </Button>
+            <Button
+              onClick={() => handleOpeButtonClick("/")}
+              className={css({
+                width: "3rem",
+              })}
+            >
+              /
+            </Button>
           </ButtonGroup>
         </FlexGridItem>
         <FlexGridItem>
           <ButtonGroup>
-            <Button onClick={() => handleButtonClick("4")}>4</Button>
-            <Button onClick={() => handleButtonClick("5")}>5</Button>
-            <Button onClick={() => handleButtonClick("6")}>6</Button>
-            <Button onClick={() => handleOpeButtonClick("*")}>*</Button>
+            <Button
+              onClick={() => handleButtonClick("4")}
+              className={css({
+                width: "3rem",
+              })}
+            >
+              4
+            </Button>
+            <Button
+              onClick={() => handleButtonClick("5")}
+              className={css({
+                width: "3rem",
+              })}
+            >
+              5
+            </Button>
+            <Button
+              onClick={() => handleButtonClick("6")}
+              className={css({
+                width: "3rem",
+              })}
+            >
+              6
+            </Button>
+            <Button
+              onClick={() => handleOpeButtonClick("*")}
+              className={css({
+                width: "3rem",
+              })}
+            >
+              *
+            </Button>
           </ButtonGroup>
         </FlexGridItem>
         <FlexGridItem>
           <ButtonGroup>
-            <Button onClick={() => handleButtonClick("1")}>1</Button>
-            <Button onClick={() => handleButtonClick("2")}>2</Button>
-            <Button onClick={() => handleButtonClick("3")}>3</Button>
-            <Button onClick={() => handleOpeButtonClick("-")}>-</Button>
+            <Button
+              onClick={() => handleButtonClick("1")}
+              className={css({
+                width: "3rem",
+              })}
+            >
+              1
+            </Button>
+            <Button
+              onClick={() => handleButtonClick("2")}
+              className={css({
+                width: "3rem",
+              })}
+            >
+              {" "}
+              2
+            </Button>
+            <Button
+              onClick={() => handleButtonClick("3")}
+              className={css({
+                width: "3rem",
+              })}
+            >
+              3
+            </Button>
+            <Button
+              onClick={() => handleOpeButtonClick("-")}
+              className={css({
+                width: "3rem",
+              })}
+            >
+              -
+            </Button>
           </ButtonGroup>
         </FlexGridItem>
         <FlexGridItem>
           <ButtonGroup>
-            <Button onClick={() => handleButtonClick("0")}>0</Button>
-            <Button onClick={() => handleCommaClick()}>.</Button>
-            <Button onClick={() => handleEqualButtonClick()}>=</Button>
-            <Button onClick={() => handleOpeButtonClick("+")}>+</Button>
+            <Button
+              onClick={() => handleButtonClick("0")}
+              className={css({
+                width: "3rem",
+              })}
+            >
+              0
+            </Button>
+            <Button
+              onClick={() => handleCommaClick()}
+              className={css({
+                width: "3rem",
+              })}
+            >
+              .
+            </Button>
+            <Button
+              onClick={() => handleEqualButtonClick()}
+              className={css({
+                width: "3rem",
+              })}
+            >
+              =
+            </Button>
+            <Button
+              onClick={() => handleOpeButtonClick("+")}
+              className={css({
+                width: "3rem",
+              })}
+            >
+              +
+            </Button>
           </ButtonGroup>
         </FlexGridItem>
       </FlexGrid>
