@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button } from "baseui/button";
 import { ButtonGroup } from "baseui/button-group";
 import { FlexGrid, FlexGridItem } from "baseui/flex-grid";
+import { ListItem, ListItemLabel } from "baseui/list";
 import { useStyletron } from "styletron-react";
 
 type CalcResult = {
@@ -109,6 +110,9 @@ function App() {
   };
 
   const [css] = useStyletron();
+  const button_style = css({
+    width: "3rem",
+  });
 
   return (
     <div>
@@ -121,32 +125,20 @@ function App() {
           <ButtonGroup>
             <Button
               onClick={() => handleMemButtonClick()}
-              className={css({
-                width: "3rem",
-              })}
+              className={button_style}
             >
               M+
             </Button>
-            <Button
-              className={css({
-                width: "3rem",
-              })}
-            >
-              M-
-            </Button>
+            <Button className={button_style}>M-</Button>
             <Button
               onClick={() => handleOpeButtonClick("%")}
-              className={css({
-                width: "3rem",
-              })}
+              className={button_style}
             >
               %
             </Button>
             <Button
               onClick={() => handleClearButtonClick()}
-              className={css({
-                width: "3rem",
-              })}
+              className={button_style}
             >
               C
             </Button>
@@ -156,33 +148,25 @@ function App() {
           <ButtonGroup>
             <Button
               onClick={() => handleButtonClick("7")}
-              className={css({
-                width: "3rem",
-              })}
+              className={button_style}
             >
               7
             </Button>
             <Button
               onClick={() => handleButtonClick("8")}
-              className={css({
-                width: "3rem",
-              })}
+              className={button_style}
             >
               8
             </Button>
             <Button
               onClick={() => handleButtonClick("9")}
-              className={css({
-                width: "3rem",
-              })}
+              className={button_style}
             >
               9
             </Button>
             <Button
               onClick={() => handleOpeButtonClick("/")}
-              className={css({
-                width: "3rem",
-              })}
+              className={button_style}
             >
               /
             </Button>
@@ -192,33 +176,25 @@ function App() {
           <ButtonGroup>
             <Button
               onClick={() => handleButtonClick("4")}
-              className={css({
-                width: "3rem",
-              })}
+              className={button_style}
             >
               4
             </Button>
             <Button
               onClick={() => handleButtonClick("5")}
-              className={css({
-                width: "3rem",
-              })}
+              className={button_style}
             >
               5
             </Button>
             <Button
               onClick={() => handleButtonClick("6")}
-              className={css({
-                width: "3rem",
-              })}
+              className={button_style}
             >
               6
             </Button>
             <Button
               onClick={() => handleOpeButtonClick("*")}
-              className={css({
-                width: "3rem",
-              })}
+              className={button_style}
             >
               *
             </Button>
@@ -228,34 +204,26 @@ function App() {
           <ButtonGroup>
             <Button
               onClick={() => handleButtonClick("1")}
-              className={css({
-                width: "3rem",
-              })}
+              className={button_style}
             >
               1
             </Button>
             <Button
               onClick={() => handleButtonClick("2")}
-              className={css({
-                width: "3rem",
-              })}
+              className={button_style}
             >
               {" "}
               2
             </Button>
             <Button
               onClick={() => handleButtonClick("3")}
-              className={css({
-                width: "3rem",
-              })}
+              className={button_style}
             >
               3
             </Button>
             <Button
               onClick={() => handleOpeButtonClick("-")}
-              className={css({
-                width: "3rem",
-              })}
+              className={button_style}
             >
               -
             </Button>
@@ -265,33 +233,22 @@ function App() {
           <ButtonGroup>
             <Button
               onClick={() => handleButtonClick("0")}
-              className={css({
-                width: "3rem",
-              })}
+              className={button_style}
             >
               0
             </Button>
-            <Button
-              onClick={() => handleCommaClick()}
-              className={css({
-                width: "3rem",
-              })}
-            >
+            <Button onClick={() => handleCommaClick()} className={button_style}>
               .
             </Button>
             <Button
               onClick={() => handleEqualButtonClick()}
-              className={css({
-                width: "3rem",
-              })}
+              className={button_style}
             >
               =
             </Button>
             <Button
               onClick={() => handleOpeButtonClick("+")}
-              className={css({
-                width: "3rem",
-              })}
+              className={button_style}
             >
               +
             </Button>
@@ -307,9 +264,11 @@ function App() {
       <div>
         <ul>
           {results.map((result, index) => (
-            <li key={index} onClick={() => handleSetMem(index)}>
-              {result.a} {result.ope} {result.b} = {result.ans}
-            </li>
+            <ListItem key={index} onClick={() => handleSetMem(index)}>
+              <ListItemLabel description={result.ans}>
+                {result.a} {result.ope} {result.b}
+              </ListItemLabel>
+            </ListItem>
           ))}
         </ul>
       </div>
