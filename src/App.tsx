@@ -13,7 +13,6 @@ type CalcResult = {
 };
 
 function App() {
-  const [display, setDisplay] = useState("1234567890");
   const [a, setA] = useState("");
   const [b, setB] = useState("");
   const [operator, setOperator] = useState("");
