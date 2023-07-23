@@ -9,7 +9,7 @@ type CalcResult = {
   a: string;
   ope: string;
   b: string;
-  ans: number;
+  ans: string;
 };
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
   const [b, setB] = useState("");
   const [operator, setOperator] = useState("");
   const [isOpe, setisOpe] = useState(false);
-  const [ans, setAns] = useState(0);
+  const [ans, setAns] = useState("");
   const [results, setResults] = useState<CalcResult[]>([]);
 
   const handleButtonClick = (num: string) => {
@@ -78,17 +78,19 @@ function App() {
   const handleEqualButtonClick = () => {
     let a_num = Number(a);
     let b_num = Number(b);
+    let new_ans = 0;
     if (operator === "+") {
-      setAns(a_num + b_num);
+      new_ans = a_num + b_num;
     } else if (operator === "-") {
-      setAns(a_num - b_num);
+      new_ans = a_num - b_num;
     } else if (operator === "*") {
-      setAns(a_num * b_num);
+      new_ans = a_num * b_num;
     } else if (operator === "/") {
-      setAns(a_num / b_num);
+      new_ans = a_num / b_num;
     } else if (operator === "%") {
-      setAns(a_num % b_num);
+      new_ans = a_num % b_num;
     }
+    setAns(new_ans.toString());
   };
 
   const handleClearButtonClick = () => {
@@ -96,7 +98,7 @@ function App() {
     setB("");
     setOperator("");
     setisOpe(false);
-    setAns(0);
+    setAns("");
   };
 
   const handleMemPlusButtonClick = () => {
