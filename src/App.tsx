@@ -98,8 +98,17 @@ function App() {
     setAns(0);
   };
 
-  const handleMemButtonClick = () => {
+  const handleMemPlusButtonClick = () => {
     setResults([...results, { a: a, ope: operator, b: b, ans: ans }]);
+  };
+
+  const handleMemMinusButtonClick = () => {
+    if (results.length === 0) {
+      return;
+    }
+    let new_results = [...results];
+    new_results.splice(results.length - 1, 1);
+    setResults(new_results);
   };
 
   const handleSetMem = (index: number) => {
@@ -129,12 +138,17 @@ function App() {
         <FlexGridItem>
           <ButtonGroup>
             <Button
-              onClick={() => handleMemButtonClick()}
+              onClick={() => handleMemPlusButtonClick()}
               className={button_style}
             >
               M+
             </Button>
-            <Button className={button_style}>M-</Button>
+            <Button
+              className={button_style}
+              onClick={() => handleMemMinusButtonClick()}
+            >
+              M-
+            </Button>
             <Button
               onClick={() => handleOpeButtonClick("%")}
               className={button_style}
