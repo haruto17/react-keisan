@@ -267,7 +267,11 @@ function App() {
         <p>ans : {ans}</p>
       </div>
       <div>
-        <ul>
+        <ul
+          className={css({
+            paddingLeft: 0,
+          })}
+        >
           {results.map((result, index) => (
             <ListItem key={index} onClick={() => handleSetMem(index)}>
               <ListItemLabel description={result.ans}>
