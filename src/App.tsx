@@ -13,6 +13,7 @@ type CalcResult = {
 };
 
 function App() {
+  const [display, setDisplay] = useState("1234567890");
   const [a, setA] = useState("");
   const [b, setB] = useState("");
   const [operator, setOperator] = useState("");
@@ -126,10 +127,20 @@ function App() {
   return (
     <div
       className={css({
-        paddingTop: "5rem",
         paddingLeft: "5rem",
       })}
     >
+      <div
+        className={css({
+          width: "12rem",
+          textAlign: "right",
+        })}
+      >
+        <p>&emsp;{a}</p>
+        <p>&emsp;{operator}</p>
+        <p>&emsp;{b}</p>
+        <p>&emsp;{ans}</p>
+      </div>
       <FlexGrid
         flexGridColumnCount={1}
         flexGridRowGap="scale400"
@@ -274,12 +285,6 @@ function App() {
           </ButtonGroup>
         </FlexGridItem>
       </FlexGrid>
-      <div>
-        <p>a : {a}</p>
-        <p>ope : {operator}</p>
-        <p>b : {b}</p>
-        <p>ans : {ans}</p>
-      </div>
       <div>
         <ul
           className={css({
