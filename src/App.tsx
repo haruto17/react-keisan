@@ -115,7 +115,12 @@ function App() {
   });
 
   return (
-    <div>
+    <div
+      className={css({
+        paddingTop: "5rem",
+        paddingLeft: "5rem",
+      })}
+    >
       <FlexGrid
         flexGridColumnCount={1}
         flexGridRowGap="scale400"
