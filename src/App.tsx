@@ -142,145 +142,84 @@ function App() {
         <p>&emsp;{b}</p>
         <p>&emsp;{ans}</p>
       </div>
-      <FlexGrid
-        flexGridColumnCount={1}
-        flexGridRowGap="scale400"
-        flexGridColumnGap="scale200"
-      >
+      <FlexGrid flexGridColumnCount={1} flexGridRowGap="scale400" flexGridColumnGap="scale200">
         <FlexGridItem>
           <ButtonGroup>
-            <Button
-              onClick={() => handleMemPlusButtonClick()}
-              className={button_style}
-            >
+            <Button onClick={() => handleMemPlusButtonClick()} className={button_style}>
               M+
             </Button>
-            <Button
-              className={button_style}
-              onClick={() => handleMemMinusButtonClick()}
-            >
+            <Button className={button_style} onClick={() => handleMemMinusButtonClick()}>
               M-
             </Button>
-            <Button
-              onClick={() => handleOpeButtonClick("%")}
-              className={button_style}
-            >
+            <Button onClick={() => handleOpeButtonClick("%")} className={button_style}>
               %
             </Button>
-            <Button
-              onClick={() => handleClearButtonClick()}
-              className={button_style}
-            >
+            <Button onClick={() => handleClearButtonClick()} className={button_style}>
               C
             </Button>
           </ButtonGroup>
         </FlexGridItem>
         <FlexGridItem>
           <ButtonGroup>
-            <Button
-              onClick={() => handleButtonClick("7")}
-              className={button_style}
-            >
+            <Button onClick={() => handleButtonClick("7")} className={button_style}>
               7
             </Button>
-            <Button
-              onClick={() => handleButtonClick("8")}
-              className={button_style}
-            >
+            <Button onClick={() => handleButtonClick("8")} className={button_style}>
               8
             </Button>
-            <Button
-              onClick={() => handleButtonClick("9")}
-              className={button_style}
-            >
+            <Button onClick={() => handleButtonClick("9")} className={button_style}>
               9
             </Button>
-            <Button
-              onClick={() => handleOpeButtonClick("/")}
-              className={button_style}
-            >
+            <Button onClick={() => handleOpeButtonClick("/")} className={button_style}>
               /
             </Button>
           </ButtonGroup>
         </FlexGridItem>
         <FlexGridItem>
           <ButtonGroup>
-            <Button
-              onClick={() => handleButtonClick("4")}
-              className={button_style}
-            >
+            <Button onClick={() => handleButtonClick("4")} className={button_style}>
               4
             </Button>
-            <Button
-              onClick={() => handleButtonClick("5")}
-              className={button_style}
-            >
+            <Button onClick={() => handleButtonClick("5")} className={button_style}>
               5
             </Button>
-            <Button
-              onClick={() => handleButtonClick("6")}
-              className={button_style}
-            >
+            <Button onClick={() => handleButtonClick("6")} className={button_style}>
               6
             </Button>
-            <Button
-              onClick={() => handleOpeButtonClick("*")}
-              className={button_style}
-            >
+            <Button onClick={() => handleOpeButtonClick("*")} className={button_style}>
               *
             </Button>
           </ButtonGroup>
         </FlexGridItem>
         <FlexGridItem>
           <ButtonGroup>
-            <Button
-              onClick={() => handleButtonClick("1")}
-              className={button_style}
-            >
+            <Button onClick={() => handleButtonClick("1")} className={button_style}>
               1
             </Button>
-            <Button
-              onClick={() => handleButtonClick("2")}
-              className={button_style}
-            >
+            <Button onClick={() => handleButtonClick("2")} className={button_style}>
               {" "}
               2
             </Button>
-            <Button
-              onClick={() => handleButtonClick("3")}
-              className={button_style}
-            >
+            <Button onClick={() => handleButtonClick("3")} className={button_style}>
               3
             </Button>
-            <Button
-              onClick={() => handleOpeButtonClick("-")}
-              className={button_style}
-            >
+            <Button onClick={() => handleOpeButtonClick("-")} className={button_style}>
               -
             </Button>
           </ButtonGroup>
         </FlexGridItem>
         <FlexGridItem>
           <ButtonGroup>
-            <Button
-              onClick={() => handleButtonClick("0")}
-              className={button_style}
-            >
+            <Button onClick={() => handleButtonClick("0")} className={button_style}>
               0
             </Button>
             <Button onClick={() => handleCommaClick()} className={button_style}>
               .
             </Button>
-            <Button
-              onClick={() => handleEqualButtonClick()}
-              className={button_style}
-            >
+            <Button onClick={() => handleEqualButtonClick()} className={button_style}>
               =
             </Button>
-            <Button
-              onClick={() => handleOpeButtonClick("+")}
-              className={button_style}
-            >
+            <Button onClick={() => handleOpeButtonClick("+")} className={button_style}>
               +
             </Button>
           </ButtonGroup>
