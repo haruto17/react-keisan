@@ -102,6 +102,15 @@ function App() {
     setResults([...results, { a: a, ope: operator, b: b, ans: ans }]);
   };
 
+  const handleMemMinusButtonClick = () => {
+    if (results.length === 0) {
+      return;
+    }
+    let new_results = [...results];
+    new_results.splice(results.length - 1, 1);
+    setResults(new_results);
+  };
+
   const handleSetMem = (index: number) => {
     setA(results[index].a);
     setB(results[index].b);
@@ -134,7 +143,12 @@ function App() {
             >
               M+
             </Button>
-            <Button className={button_style}>M-</Button>
+            <Button
+              className={button_style}
+              onClick={() => handleMemMinusButtonClick()}
+            >
+              M-
+            </Button>
             <Button
               onClick={() => handleOpeButtonClick("%")}
               className={button_style}
