@@ -129,13 +129,19 @@ function App() {
   return (
     <div
       className={css({
-        paddingLeft: "5rem",
+        display: "flex",
+        flexWrap: "wrap",
+        marginLeft: "auto",
+        marginRight: "auto",
+        width: "200px",
+        marginTop: "5%",
       })}
     >
       <div
         className={css({
           width: "12rem",
           textAlign: "right",
+          marginBottom: "5%",
         })}
       >
         <LabelLarge>&emsp;{a}</LabelLarge>
@@ -144,7 +150,11 @@ function App() {
         <LabelLarge>&emsp;{ans}</LabelLarge>
       </div>
       <FlexGrid flexGridColumnCount={1} flexGridRowGap="scale400" flexGridColumnGap="scale200">
-        <FlexGridItem>
+        <FlexGridItem
+          className={css({
+            maxWidth: "fit-content",
+          })}
+        >
           <ButtonGroup>
             <Button onClick={() => handleMemPlusButtonClick()} className={button_style}>
               M+
@@ -160,7 +170,11 @@ function App() {
             </Button>
           </ButtonGroup>
         </FlexGridItem>
-        <FlexGridItem>
+        <FlexGridItem
+          className={css({
+            maxWidth: "fit-content",
+          })}
+        >
           <ButtonGroup>
             <Button onClick={() => handleButtonClick("7")} className={button_style}>
               7
@@ -176,7 +190,11 @@ function App() {
             </Button>
           </ButtonGroup>
         </FlexGridItem>
-        <FlexGridItem>
+        <FlexGridItem
+          className={css({
+            maxWidth: "fit-content",
+          })}
+        >
           <ButtonGroup>
             <Button onClick={() => handleButtonClick("4")} className={button_style}>
               4
@@ -192,7 +210,11 @@ function App() {
             </Button>
           </ButtonGroup>
         </FlexGridItem>
-        <FlexGridItem>
+        <FlexGridItem
+          className={css({
+            maxWidth: "fit-content",
+          })}
+        >
           <ButtonGroup>
             <Button onClick={() => handleButtonClick("1")} className={button_style}>
               1
@@ -209,7 +231,11 @@ function App() {
             </Button>
           </ButtonGroup>
         </FlexGridItem>
-        <FlexGridItem>
+        <FlexGridItem
+          className={css({
+            maxWidth: "fit-content",
+          })}
+        >
           <ButtonGroup>
             <Button onClick={() => handleButtonClick("0")} className={button_style}>
               0
